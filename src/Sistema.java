@@ -1,17 +1,16 @@
+/**
+ * Ponto de entrada do sistema: cria o aluno e exibe o resultado do seu boletim.
+ */
 public class Sistema {
+
     public static void main(String[] args) {
-        String n = "Carlos";
-        double a = 8;
-        double b = 7;
-        double c = (a + b) / 2;
+        Aluno aluno = new Aluno("Carlos", 8.0, 7.0);
+        exibirBoletim(aluno);
+    }
 
-        System.out.println("Aluno: " + n);
-        System.out.println("Media: " + c);
-
-        if (c >= 6) {
-            System.out.println("Aprovado");
-        } else {
-            System.out.println("Reprovado");
-        }
+    private static void exibirBoletim(Aluno aluno) {
+        System.out.println("Aluno: " + aluno.getNome());
+        System.out.println("Media: " + aluno.calcularMedia());
+        System.out.println("Situacao: " + aluno.obterSituacao());
     }
 }
